@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tail Tells the Tale: Female Families and Speed Figures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,900;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">    
+</head>
+<body>
+
+<header>
+    <h1>The Tail Tells the Tale</h1>
+    <h2 class="subtitle"> An exploration of female family lines and observed racing performance.</h2>
+    <figure style="margin: 2rem 0; text-align: center;">
+    <img src="images/marguerite_9135652_orig.jpg" alt="Oil painting of mare and foal" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <figcaption style="margin-top: 0.75rem; font-size: 0.95rem; color: var(--muted); font-style: italic;">The broodmare Marguerite (Family 4-n) with Gallant Fox as a colt</figcaption>
+        <figcaption style="margin-top: 0.25rem; font-size: 0.95rem; color: var(--muted); font-style: italic;">Gallant Fox would go on to win the 1930 Triple Crown</figcaption>
+    </figure>
+
+    
+    <p class="scroll-hint">↓ Scroll to explore</p>
+</header>
+
+<main>
+  <!-- Section 1: The Question -->
+  <section class="fade-in">
+    <h2>The Question</h2>
+      <p>In Thoroughbred breeding, conventional wisdom holds that the dam's female family can influence her foals future talent more than her own race record. Female families have been catalogued numerically using the Lowe System, but do these lines highlight families that stand apart? Do faster horses consistently come from certain female lines?</p>
+      <p>This analysis does not attempt to rank female families from best to worst. Instead, it asks a narrower statistical question: given how many horses each family actually sent to the races, did their outcomes deviate meaningfully from what we would expect by chance? The focus is on identifying families that consistently shift probabilities, not on assigning absolute labels.</p>
+      <p>I set out to explore this question by analyzing 13,902 horses made up of the entire group of <a href="#glossary-starters">starters</a> from the <strong>2021 North American foal crop</strong>. The dataset includes each starter's highest lifetime <a href="#glossary-Equibasespeedfigures">Equibase® speed figures</a> as of December 15, 2025 and the Lowe number assigned to their dams.</p>
+      <p>This analysis examines whether certain female families consistently produce faster—or slower—racehorses than expected by chance. Using the entire population of 13,902 starters from the 2021 North American foal crop, I found that a small number of families significantly overperformed across multiple speed-figure thresholds, while others disproportionately contributed to the lowest end of the performance distribution. These patterns are unlikely to be random, but their causes remain open questions.</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="number">13,902</span>
+          <span class="label">Horses analyzed</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">215</span>
+          <span class="label">Female families</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">113</span>
+          <span class="label">Families with 30+ horses</span>
+        </div>
+      </div>
+      <div class="insight">
+        <p><strong>Important:</strong> This is exploratory research based on <a href="#glossary-starters">starters</a> from a single foal crop. The correlations I found are a starting point, not a conclusion. Further analysis across multiple years is needed to determine whether these patterns hold — and why certain groups of mares produced these results in this particular crop.</p>
+      </div>
+  </section>
+  <!-- Executive Summary -->
+  <section class="fade-in">
+    <h2>Spoiler alert: What the Data Reveals</h2>
+      <h3>The Winners</h3>
+      <p>After analyzing the data, several female families stood out for consistently producing faster horses than expected by chance. Here are the key findings:</p>
+    <div class="comparison comparison-card star">
+      <h4 class="family">🏆 Family 9</h4>
+        <ul>
+          <li>The Complete Package</li>
+          <li >The only family to hit all five thresholds — from allowance to Grade I Stakes caliber.</li> 
+       </ul>
+    </div>
+    <div class="comparison comparison-card safe">  
+      <h4 class="family">Family 26</h4>
+        <ul>
+          <li>Produced more than expected runners in speed figures up to Grade II and Grade III.</li>
+          <li>Consistent from allowance to lower graded stakes.</li>
+        </ul>
+        </div>
+    </div>
+    <div class="comparison comparison-card safe">
+      <h4 class="family">Families 8-k, 6-a, 4-f, 5-e, 13</h4>
+        <ul>
+          <li>Allowance Specialists</li>
+          <li>Reliable at 70-90 that fade at graded stakes level.</li>
+        </ul>
+    </div>
+    <h3>Families That Underperformed</h3>
+      <p>Female families can also show statistically meaningful correlations with negative outcomes. In this crop, a small number of families placed significantly more horses into the lowest speed-figure bands than expected by chance. Most families—even those with impressive individual runners—track closely with the population average when viewed across many starters. These families did not.</p>
+        <div class="comparison comparison-card avoid">
+          <h4 class="family">Family 4m</h4>
+            <ul>
+              <li>Mid-level underperformance</li>
+              <li>Produced significantly more horses in the 50–60 speed-figure range than expected, suggesting a tendency toward middling outcomes rather than extreme lows.</li>
+            </ul>
+        </div>
+        <div class="comparison comparison-card avoid">
+          <h4 class="family">Family 11-c</h4>
+            <ul>
+              <li>Persistent low-end concentration</li>
+              <li>Overrepresented the bottom of the performance distribution across four thresholds, from single-digit speed figures through the sub-40 range.</li>
+          </ul>
+        </div>
+        <div class="comparison comparison-card avoid">  
+          <h4 class="family">Family 21-a</h4>
+            <ul>
+              <li>Consistent low-performance skew</li>
+              <li>Placed significantly more horses than expected into the lowest speed-figure bands, mirroring the deep tail pattern seen in Family 11-c.</li>
+            </ul>
+            </div>
+        </div>
+    
+    <div class="comparison comparison-card avoid">
+      <h4 class="family">Families 4-d, 14-b, 16-h</h4>
+        <ul>
+          <li>Localized low-end underperformance</li>
+          <li>Showed statistically meaningful excesses in specific low speed-figure bands, indicating targeted weakness rather than broad population-average behavior.</li>
+        </ul>
+    </div>
+
+        <h3>The Bottom Line</h3> 
+        <div class="insight">
+            <p><strong>Caveat:</strong> This is exploratory research based on a single foal crop. These correlations are a starting point for further investigation, not definitive conclusions.</p>
+        </div>
+  </section>
+
+    <hr style="border: none; border-top: 1px solid var(--border); margin: 3rem 0;">
+
+
+    <!-- Section 2: The Journey -->
+  <section class="fade-in">
+    <h2>How These Results Were Calculated</h2>
+        <p>I compared female families to the speed figures of their offspring. Below, I'll explain what these variables mean, their constraints, and how I arrived at the findings above.</p>
+    <h3>Apples to Apples: Performance as a Metric</h3>
+      <p>Comparing racehorses is tricky: a horse grinding out a mile and a half in the slop at Aqueduct isn't running the same race as a sprinter going five furlongs on the turf at Del Mar, or a horse running a mile on the Tampa Bay dirt in February.  Different distances, surfaces, track conditions, and even track configurations make raw times meaningless for comparison.</p>
+      <p><a href="#glossary-Equibasespeedfigures">Equibase® Speed figures</a> solve this problem. They normalize performance across all these variables, producing a single number that lets you compare any horse to any other horse, regardless of where or how they ran.  Horses races are categorized by the speed figure typically required to win them.  Below is a breakdown of winning speed figures for each level.</p>
+      <p>A horse with a speed figure of <strong>110</strong> has, on at least one occasion, performed at a level consistent with top-tier graded stakes competition. This threshold is not about consistency or career average; it reflects the ability to reach the highest level of performance, even if only briefly.</p>
+    <div class="comparison-card">
+      <h4 class="family"><a href="#glossary-gradedstakes">Grade I Stakes</a></h4>
+        <ul>
+          <li>Speed Figures 110+</li>
+          <li>Elite perfomers</li>
+          <li>&lt; 1% of total population</li>
+        </ul>    
+    </div>
+    <div class="comparison-card">
+      <h4><a href="#glossary-gradedstakes">Grade II, Grade III</a></h4>
+        <ul>
+          <li>Speed Figures &gt; 100</li>
+          <li> &lt; 7% of total population</li>
+        </ul>
+    </div>
+    <div class="comparison-card">
+      <h4><a href="#glossary-allowance">Allowance</a>/<a href="#glossary-minorstakes">Minor Stakes</a></h4>
+        <ul>
+          <li>70 > Speed Figures < 100 </li>
+          <li> Most Realistic Chance for an Owner</li>
+          <li> over 35% of the population</li>
+        </ul>
+    </div>        
+    <div class="comparison-card">
+      <h4><a href="#glossary-claiming">Claiming</a></h4>
+        <ul>
+          <li>Speed Figure < 70</li>
+          <li>Higher priced claimers float between this class and allowance</li>
+          <li>More profitable for the DIY Owner/Trainer</li>
+        </ul>
+    </div>
+    </div>
+      <h3>What We're Measuring — The Horses Who Made It</h3>
+        <p>Before diving further, it's important to understand what this analysis captures — and what it doesn't.</p>
+        <p>A <a href="#glossary-Equibasespeedfigures">speed figure</a> measures <strong>raw observable ability</strong> — how fast a horse ran in an actual race. But getting to that race requires clearing a series of hurdles that have nothing to do with speed:</p>
+        
+        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li><strong>Trainability</strong> — can the horse learn to break safely from a starting gate?</li>
+            <li><strong>Temperament</strong> — will it respond to a jockey's signals under pressure?</li>
+            <li><strong><a href="#glossary-sound">Soundness</a></strong> — can it stay healthy enough to make it to the starting gate?</li>
+        </ul>
+
+        <p>Every horse in this dataset cleared those bars. The ones who didn't — the untrainable, the unsound, the ones who never made it to a race — aren't here. We're comparing horses that were all "good enough" to compete, and asking which families produced the fastest among them.</p>
+
+        <p>Speed figures also can't tell us which horses can <strong>endure</strong> — the ones who stay <a href="#glossary-sound">sound</a> enough to race repeatedly and earn money for their owners over a career. A horse might flash elite speed once and never race again. Conformation flaws, maintenance requirements, and durability all affect whether talent translates to earnings. Those are separate questions for separate analyses.</p>
+
+        <div class="insight">
+            <p><strong>Bottom line:</strong> This analysis asks a narrow but meaningful question — which families produce horses with the highest <em>raw ability</em>, among horses that made it to the races. It can't tell us which families are most likely to produce horses that reach the track, or which ones hold up long enough to have profitable careers.</p>
+        </div>
+  </section>
+
+    <!-- Section 3: Understanding the Numbers -->
+  <section class="fade-in">
+        <h3>What is a Family Number?</h3>
+        <p>If you've spent time around Thoroughbred pedigrees, you've seen names like "Family 1-a" or "Family 10-d" — but what do they mean?</p>
+
+        <h4>The Bruce Lowe System</h4>
+        <p>In the 1890s, Australian researcher Bruce Lowe traced every Thoroughbred back to the foundation mares of the breed. He numbered these maternal lines <strong>1 through 43</strong> based on how many Epsom Derby and Oaks winners each had produced — Family 1 had the most classic winners, Family 43 the fewest.</p>
+        
+        <p>Over time, families branched. When a branch's production quality began to stand out among others in its family, it got a letter suffix: <strong>1-a</strong>, <strong>1-b</strong>, <strong>1-c</strong>, and so on. Some families have split dozens of times.</p>
+        <p>Today, these numbers no longer serve as rankings — racing conditions have changed dramatically since their inception.  However, their usefulness to identify trends among female lines remains.</p>
+        <div class="insight">
+            <p><strong>Key point:</strong> A lower family number doesn't mean "better" today. The rankings reflect 19th-century English stamina racing, not modern American speed. Family 10-d might outperform Family 1-a on today's tracks.</p>
+        </div>
+        
+        <h3>Where to Find Family Numbers</h3>
+        <p>If you want to look up a horse's female family, <a href="https://www.pedigreequery.com" target="_blank" style="color: var(--accent);">Pedigree Query</a> is essentially the only public source. Search for any Thoroughbred and the family number appears in the pedigree details. It's not something you'll find on Equibase or most racing databases.</p>
+
+        <p class="methodology-note" style="font-size: 0.9rem; color: var(--muted); margin-top: 1.5rem; padding: 1rem; background: #f5f2ed; border-radius: 6px;">
+            <strong>A note on methodology:</strong> Family numbers in this analysis are sourced from Pedigree Query. These represent maternal lineage groupings — horses sharing the same tail-female line. Whether the numeric labels precisely match the original Bruce Lowe classifications is unverified, but doesn't affect the analysis: the groupings themselves are consistent and based on accurate pedigree data.
+        </p>
+
+        <p>The system is imperfect and historical, but it gives us a way to group horses by maternal lineage and ask: <em>do these groupings predict anything?</em></p>
+  </section>
+
+
+    <!-- Section 3: How to Find the Anomalies -->
+  <section class="fade-in">
+    <h3>What Does the Entire Population Look Like?</h3>
+      <p> In order to determine which families are exceptional, we must first identify what is normal.  Below is a graph showing the distribution of speed figures across all families in the dataset.</p>
+      <figure style="margin: 2rem 0; text-align: center;">
+        <img src="images/speed_distribution.png" alt="Distribution of speed figures across all horses" style="max-width: 100%; border-radius: 8px;">
+      </figure>
+      <p>From this graph we can see that roughly seven out of ten starters in the 2021 crop never moved beyond claiming-level performance.  At the time of this writing these horses are about to turn 6 years old and will have made the highest speed rating they will ever achieve.  Graded Stakes horses live in the far right tail of this distribution and many have finished their career at this point.</p> 
+      <p>This distribution represents a largely final accounting of performance outcomes for the crop-- a reference point for all subsequent tests, allowing us to distinguish random variation from systematic overperformance.</p>
+ <!-- Section 3: Focusing the Lens -->
+  <section class="fade-in">
+      <h3>Comparing Apples to Oranges</h3>
+        <p>The female families in this population of starters are not evenly distributed.  There are females families represented by as many as 400 starters in this crop, as well as families with as few as 3.  So if a female family produced 7 Grade I winners in a single crop, was this due to more starters and therefore more chances?</p>
+        <p>Alternatively, if a female family only had 30 starters but produced only one Grade I Winner, is that a sign of an achievement or an expected outcome?  Statistics has a tool to evaluate this scenario called the <strong><em><a href="#glossary-binomialtest">binomial test.</a></em></strong>  Using this test we can determine what is "normal" given total foals started from this family.</p>
+</section>
+  <section class="fade-in">       
+        <h2>Focusing the Lens</h2>
+          <p>I was searching for female families that exceeded population expectations as performance thresholds rise or fall. To find the success stories, I evaluated outcomes at 10-point speed-figure intervals, spanning allowance through graded-stakes levels. I also examined the opposite end of the distribution, identifying families that underperform by contributing a disproportionate share of horses unable to compete even at the claiming level.</p>
+          <div class="insight">
+            <p><strong>Which families produce more competitive horses than we would expect by chance, given how many horses they actually ran?</strong></p>
+          </div>
+          <p>For each speed-figure cutoff (70, 80, 90, 100, 110, 120), I calculated the population rate of horses reaching that level and then tested whether each family produced more horses than expected given its number of starters using a one-sided binomial test.</p>
+          <p>Families with fewer than 30 starters were <strong>excluded</strong> to reduce noise and false positives.</p>
+          <div class="table-wrapper">
+              <table >
+                <thead>
+                  <tr>
+                    <th>Family</th>
+                    <th>Thresholds Hit</th>
+                    <th>Strongest p-value</th>
+                    <th>Speed Levels</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight">
+                    <td class="family-name">9</td>
+                    <td>5</td>
+                    <td>0.0053</td>
+                    <td>70, 80, 90, 100, 110</td>
+                  </tr>
+                  <tr class="highlight">
+                    <td class="family-name">26</td>
+                    <td>4</td>
+                    <td>0.0020</td>
+                    <td>70, 80, 90, 100</td>
+                  </tr>
+                  <tr class="highlight">
+                    <td class="family-name">9-h</td>
+                    <td>4</td>
+                    <td>0.0009</td>
+                    <td>70, 80, 90, 100</td>
+                  </tr>
+                  <tr>
+                    <td class="family-name">8-k</td>
+                    <td>3</td>
+                    <td>0.0001</td>
+                    <td>70, 80, 90</td>
+                  </tr>
+                  <tr>
+                    <td class="family-name">13</td>
+                    <td>3</td>
+                    <td>0.0127</td>
+                    <td>70, 80, 100</td>
+                  </tr>
+                  <tr>
+                    <td class="family-name">6-a</td>
+                    <td>2</td>
+                    <td>0.0144</td>
+                    <td>70, 80</td>
+                  </tr>
+                  <tr>
+                    <td class="family-name">4-f</td>
+                    <td>2</td>
+                    <td>0.0244</td>
+                    <td>70, 80</td>
+                  </tr>
+                  <tr>
+                    <td class="family-name">5-e</td>
+                    <td>2</td>
+                    <td>0.0230</td>
+                    <td>80, 90</td>
+                  </tr>
+                  <tr>
+                    <td class="family-name">4-g</td>
+                    <td>2</td>
+                    <td>0.0306</td>
+                    <td>90, 120</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>  
+
+    <h3>Which Families Stand Out?</h3>
+      <p>The trends among these families requires something systematic rather than the result of random variation.  These clusters of horses have proved mathematically they literally stand out from the herd.</p>
+
+      <h4>Top Performers</h4>
+        <p>Family 9 stands out as a family that beats the population baseline consistently across all levels.  The other families in the table also outperformed if but for few speed figure ranges.  The chart below provides visualization of where each family excelled.</p>
+        <p><img src="images/binomial_hits.png" alt="binomial_hits" style="max-width: 100%; border-radius: 8px;"></p>
+      <h4>Low Performers</h4>
+        <p><em>Baseline low-performer rate (SF &lt; 50) in this dataset: 15.44%.</em></p>
+        <p>There are a handful of families showed the put more horses on the bottom of this distribution than was expected. Most families — even those with impressive individual runners — behave much like the average when viewed across many starters.  However, families underperformed for this crop.</p>
+        <div class="table-wrapper">
+          <table>
+          <thead>
+            <tr>
+                <th>Family</th>
+                <th>Thresholds Hit</th>
+                <th>Hit Thresholds</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight">
+                <td class="family-name">11-c</td>
+                <td>4</td>
+                
+                <td>[10, 20, 30, 40]</td>
+              </tr>
+              <tr class="highlight">
+                <td class="family-name">21-a</td>
+                <td>4</td>
+                <td>[10, 20, 30, 40]</td>
+              </tr>
+              <tr>
+                <td class="family-name">4-d</td>
+                <td>2</td>
+                <td>[20, 30]</td>
+              </tr>
+              <tr>
+                <td class="family-name">14-b</td>
+                <td>2</td>
+                <td>[30, 40]</td>
+              </tr>
+              <tr>
+                <td class="family-name">4-m</td>
+                <td>2</td>
+                <td>[50, 60]</td>
+              </tr>
+              <tr>
+                <td class="family-name">16-h</td>
+                <td>2</td>
+                <td>[10, 20]</td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+      <p class="section-gap">Again, I've created a visual representation of the data in the table for the low performance families. The table represents overrepresentation of low-performance horses for these families.</p>
+      <p><img class="plot"src="images/binomial_low_hits.png" alt="Low Performance Plot"></p>
+      <p>These families do not merely produce the occasional slow horse; they repeatedly place more runners than expected into the lowest speed-figure bands, even after accounting for overall population rates.</p>
+      <p>The pattern is clearest for families 11-c and 21-a, which over-represented the bottom of the distribution across four separate thresholds, from single-digit speed figures through the sub-40 range, indicating a systematic tendency toward low performance rather than random variance.</p>
+      <p>Other families show narrower but still meaningful effects: 4-d and 14-b concentrate excess runners in the 20–40 range, while 16-h skews toward very low outcomes despite fewer hit thresholds, and 4-m underperforms primarily in the 50–60 band, suggesting mediocrity rather than extreme weakness.</p>
+      <p>This analysis does not claim these families never produce quality horses; it shows that, on average and across many starters, they contribute disproportionately to the lower tail of the performance distribution for this crop.</p>
+      <p>In practical terms, these families represent negative expectation risk: even when an individual appears viable on paper, the family background increases the likelihood of a sub-par outcome relative to the population baseline.</p>
+    </div>
+  </section>
+  <section class="fade-in">
+    <div class="insight">
+      <p>This is exploratory work. The correlations are real. The causes remain open questions.</p>
+    </div>      
+    <div class="conclusion">
+    <h2>Summary</h2>
+      <p>Some female families have genuinely put more competitive horses on the track for this crop.  Further research is required to determine what conditions produced these results and if these results have been repeated.</p>
+      <p>This analysis reveals families that shifted the odds across an entire stable rather than producing isolated standout individuals.  The probability that a random collection of mares would generate these patterns across multiple thresholds is very low.  It is important to emphasize that this does not prove a genetic cause. Yet our analysis definitively shows these horses that share the same female-family lineage didn’t just get lucky a few times. They produced competitive horses, often enough, <strong> that chance alone is not a convincing explanation</strong>. That’s why they stand out.</p>
+    </div>
+    <h3> Next steps for this analysis may include:</h3>
+     <ul>
+        <li><strong>Sire analysis:</strong> Group these horses by sire to see if there's crossover between sire effects and female family effects. Are certain sires clicking with certain families?</li>
+        <li><strong>Multiple foal crops:</strong> Do these patterns hold in 2020, 2022, and beyond, or is this a one-year anomaly?</li>
+        <li><strong>Trainer/ownership effects:</strong> Are top-performing families concentrated among well-resourced operations?</li>
+        <li><strong>The self-fulfilling prophecy:</strong> Can we separate genetic advantage from investment advantage?</li>
+     </ul>
+  </section>
+  <section id="glossary" class="fade-in">
+    <h2>Glossary</h2>
+      <p id="glossary-binomialtest"><strong>binomial test:</strong> A statistical test used to determine whether the number of observed successes in a group differs significantly from what would be expected under a known baseline probability. In this analysis, it is used to ask whether a female family produced more (or fewer) horses above a given speed-figure threshold than would be expected based on the population-wide rate, after accounting for the number of starters in that family.</p>
+      <p id="glossary-starters"><strong>Starters:</strong> Horses that have officially entered and run in at least one race. This excludes horses that were bred but never made it to the track due to injury, lack of ability, or other reasons.</p>
+      <p id="glossary-stakes"><strong>Stakes:</strong> The highest level of horse racing.  Owners must pay a "stake" to enter their horse. Stakes races offer larger purses and attract the best horses. Graded stakes (Grade 1, 2, 3) are the most prestigious, with Grade 1 races like the Kentucky Derby at the top.</p>
+      <p id="glossary-Equibasespeedfigures"><strong>Equibase Speed Figures:</strong> A numerical rating that measures how fast a horse ran in a race, adjusted for track conditions and distance. Higher numbers mean faster performances. A figure of 100+ is excellent, 90+ is above average, and below 70 is poor. Equibase is the official data provider for North American horse racing.</p>
+      <p id="glossary-claiming"><strong>Claiming races:</strong> The lowest level of horse racing. Every horse in the race is for sale at a set price. Trainers use these races to find the right level for their horses. Speed figures typically range from 70–80.</p>
+      <p id="glossary-allowance"><strong>Allowance races:</strong> Mid-level races where horses are not for sale. Horses compete based on conditions like age or past earnings. A step up from claiming. Speed figures typically range from 90–100.</p>
+      <p id="glossary-gradedstakes"><strong>Graded stakes:</strong> The highest level of racing. Graded stakes are ranked Grade 1 (most prestigious), Grade 2, and Grade 3. The Kentucky Derby, Preakness, and Belmont are all Grade 1 races. Speed figures of 110+ indicate graded stakes caliber.</p>
+      <p id="glossary-minorstakes"><strong>Minor stakes:</strong> Stakes races that have not been assigned a grade. Also called "non-graded stakes" or "listed stakes." They offer smaller purses than graded stakes but are a step above allowance races. Winning a minor stakes race earns a horse "black type" — bold print in sales catalogs that signals quality.</p>
+      <p id="glossary-sound"><strong>Sound:</strong> A horse that is healthy and free from injury or lameness. A sound horse can train and race without physical issues. Many horses bred never make it to the track because they don't stay sound.</p>
+      <p id="glossary-grade1"><strong>Grade 1 (G1):</strong> The highest level of stakes racing. These races feature the best horses competing for the largest purses. Examples include the Kentucky Derby, Breeders' Cup Classic, and Belmont Stakes. Winning a Grade 1 significantly increases a horse's value as a breeding prospect.</p>
+      <p id="glossary-grade2"><strong>Grade 2 (G2):</strong> High-quality stakes races one tier below Grade 1. These races attract top horses but typically offer smaller purses and less prestige than G1 events. Horses often use G2 races as prep races for Grade 1 targets.</p>
+      <p id="glossary-grade3"><strong>Grade 3 (G3):</strong> The entry level of graded stakes racing. While less prestigious than G1 or G2, winning a Grade 3 still marks a horse as above-average and earns "graded black type" in sales catalogs — a sign of quality that increases breeding value.</p>
+  </section>
+</main>
+
+<footer>
+    <p>Analysis based on 13,902 horses across 215 female families</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
