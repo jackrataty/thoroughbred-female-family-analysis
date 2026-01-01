@@ -9,6 +9,7 @@
     --highlight: #2f2a1f86;
     --safe: #40916c;
     --safe-light: #52b788;
+    --rich: rgba(68, 2, 2, 0.603)
 }
         * {
             margin: 0;
@@ -26,48 +27,107 @@
             
         }
 
-        /* Header */
-        header {
-            
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(180deg, #f5f0e8 0%, var(--bg) 100%);
-            border-bottom: 1px solid var(--border);
+        /* HERO HEADER (was 'header') */
+        .hero-header {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(180deg, #f5f0e8 0%, var(--bg) 100%);
+        border-bottom: 1px solid var(--border);
         }
 
-        header h1 {
-            font-family: 'Fraunces', Georgia, serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            max-width: 14ch;
-            margin-bottom: 1.5rem;
-            color: var(--text);
+        .hero-header h1 { /* unchanged content, just scoped */
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        max-width: 14ch;
+        margin-bottom: 1.5rem;
+        color: var(--text);
         }
 
-        header h1 span {
-            color: var(--accent);
+        .hero-header h1 span { color: var(--accent); }
+
+        .hero-header .subtitle {
+        font-size: 1.25rem;
+        color: var(--muted);
+        max-width: 40ch;
+        margin-bottom: 3rem;
         }
 
-        header .subtitle {
-            font-size: 1.25rem;
-            color: var(--muted);
-            max-width: 40ch;
-            margin-bottom: 3rem;
+        .hero-header .scroll-hint {
+        font-size: 0.875rem;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        animation: pulse 2s ease-in-out infinite;
         }
 
-        header .scroll-hint {
-            font-size: 0.875rem;
-            color: var(--muted);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            animation: pulse 2s ease-in-out infinite;
+        /* SITE HEADER (persistent nav) */
+        .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--rich); /* matches your bg vibe */
+        border-bottom: 10px solid var(--border);
+        backdrop-filter: blur(10px);
+        background: linear-gradient(
+                    180deg,
+                    rgba(18,18,18,0.95) 0%,
+                    var(--rich) 100%
+                );
         }
+
+        .site-nav {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        }
+
+        .site-title {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: 2.5rem;
+        font-weight: 900;
+        letter-spacing: .7em;
+        margin-right: auto;
+        color: var(--text);
+        }
+
+        .site-header a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.85rem;
+        }
+
+        .site-header a:hover {
+        color: var(--accent);
+        text-decoration: none;
+        }
+
+        .site-header a:visited {
+        color: var(--text);
+        }
+
+        @media (max-width: 600px) {
+            .site-nav {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+            .site-title {
+                flex-basis: 100%;
+                margin-right: 0;
+            }
+        }
+
+        
 
         @keyframes pulse {
             0%, 100% { opacity: 0.5; }
@@ -256,7 +316,7 @@
             border-color: var(--safe);
         }
         .comparison-card.avoid {
-            border-color: --#b89999;
+            border-color: #b89999;
         }
 
         .comparison-card h4 {

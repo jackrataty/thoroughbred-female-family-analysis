@@ -9,7 +9,17 @@
 </head>
 <body>
 
-<header>
+<header class="site-header">
+  <nav class="site-nav">
+    <a class="site-title" href="index.html">The Tail Tells the Tale</a>
+    <a href="speed.html">Speed</a>
+    <a href="speed_to_money.html">Speed → Money</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+
+<header class="hero-header">
     <h1>The Tail Tells the Tale</h1>
     <h2 class="subtitle"> An exploration of female family lines and observed racing performance.</h2>
     <figure style="margin: 2rem 0; text-align: center;">
@@ -17,8 +27,6 @@
         <figcaption style="margin-top: 0.75rem; font-size: 0.95rem; color: var(--muted); font-style: italic;">The broodmare Marguerite (Family 4-n) with Gallant Fox as a colt</figcaption>
         <figcaption style="margin-top: 0.25rem; font-size: 0.95rem; color: var(--muted); font-style: italic;">Gallant Fox would go on to win the 1930 Triple Crown</figcaption>
     </figure>
-
-    
     <p class="scroll-hint">↓ Scroll to explore</p>
 </header>
 
@@ -297,11 +305,11 @@
       <p>The trends among these families requires something systematic rather than the result of random variation.  These clusters of horses have proved mathematically they literally stand out from the herd.</p>
 
       <h4>Top Performers</h4>
-        <p>Family 9 stands out as a family that beats the population baseline consistently across all levels.  The other families in the table also outperformed if but for few speed figure ranges.  The chart below provides visualization of where each family excelled.</p>
+        <p>Family 9 stands out as a family who's starter's talents beats the population baseline consistently across all levels.  The other families in the table also outperformed if but for few speed figure ranges.  The chart below provides visualization of where each family excelled.</p>
         <p><img src="images/binomial_hits.png" alt="binomial_hits" style="max-width: 100%; border-radius: 8px;"></p>
       <h4>Low Performers</h4>
         <p><em>Baseline low-performer rate (SF &lt; 50) in this dataset: 15.44%.</em></p>
-        <p>There are a handful of families showed the put more horses on the bottom of this distribution than was expected. Most families — even those with impressive individual runners — behave much like the average when viewed across many starters.  However, families underperformed for this crop.</p>
+        <p>There are a handful of families viewed below that put more horses on the bottom of this distribution than was expected. Most families — even those with impressive individual runners — behave much like the average when viewed across many starters.  However, the starters from these families displayed lower speed figures among this crop.</p>
         <div class="table-wrapper">
           <table>
           <thead>
@@ -360,19 +368,19 @@
       <p>This is exploratory work. The correlations are real. The causes remain open questions.</p>
     </div>      
     <div class="conclusion">
-    <h2>Summary</h2>
+    <h2>Interim Summary:  Speed Production</h2>
       <p>Some female families have genuinely put more competitive horses on the track for this crop.  Further research is required to determine what conditions produced these results and if these results have been repeated.</p>
-      <p>This analysis reveals families that shifted the odds across an entire stable rather than producing isolated standout individuals.  The probability that a random collection of mares would generate these patterns across multiple thresholds is very low.  It is important to emphasize that this does not prove a genetic cause. Yet our analysis definitively shows these horses that share the same female-family lineage didn’t just get lucky a few times. They produced competitive horses, often enough, <strong> that chance alone is not a convincing explanation</strong>. That’s why they stand out.</p>
+      <p>This analysis identifies female families that shifted the odds across an entire cohort rather than producing isolated standout individuals.  The probability that these patterns emerged by chance alone across multiple performance thresholds is low. 
+      <p>Importantly, this does not establish a genetic cause.  Nor does it rule out the influence of management, opportunity, or investment.  What it does show is that horses sharing the same female-lineage did not simply get lucky once or twice.  They produced talented runners often enough that randomness alone is not a convincing explanation.</p>
+      <p>The next section extends this analysis by conditioning on outcomes that require soundess and longevity.  Instead of asking only <em>which families produced talent</em>, it asks a harder question:  <strong>which families convert speed into money?</strong></p>
     </div>
-    <h3> Next steps for this analysis may include:</h3>
-     <ul>
-        <li><strong>Sire analysis:</strong> Group these horses by sire to see if there's crossover between sire effects and female family effects. Are certain sires clicking with certain families?</li>
-        <li><strong>Multiple foal crops:</strong> Do these patterns hold in 2020, 2022, and beyond, or is this a one-year anomaly?</li>
-        <li><strong>Trainer/ownership effects:</strong> Are top-performing families concentrated among well-resourced operations?</li>
-        <li><strong>The self-fulfilling prophecy:</strong> Can we separate genetic advantage from investment advantage?</li>
-     </ul>
   </section>
-  <section id="glossary" class="fade-in">
+  <section class="fade-in">
+    <section class="fade-in">
+    <h2>The Money Makers</h2>
+      <p>In the previous section, Family 9 appeared to lead the field in producing raw talent. However, while a horse can demonstrate ability, that ability must be sustained through soundness and continued competition for speed to translate into earnings. In this section, we examine how earnings are distributed across speed ratings and ask a more practical question: at what levels of speed do different families actually make money?</p>
+      <p>Horse racing offers no guarantees, but for owners without unlimited resources, sustained winnings and purse earnings are the only way a stable remains viable. Graded stakes horses represent roughly 5% of the population, so most stables cannot rely on elite performers to keep the lights on. Instead, it is durable horses with genuine ability that pay the bills. The goal of this analysis is to identify which female families consistently produce horses that earn the most money, and to determine the level of racing at which that success is realized.</p>
+<section id="glossary" class="fade-in">
     <h2>Glossary</h2>
       <p id="glossary-binomialtest"><strong>binomial test:</strong> A statistical test used to determine whether the number of observed successes in a group differs significantly from what would be expected under a known baseline probability. In this analysis, it is used to ask whether a female family produced more (or fewer) horses above a given speed-figure threshold than would be expected based on the population-wide rate, after accounting for the number of starters in that family.</p>
       <p id="glossary-starters"><strong>Starters:</strong> Horses that have officially entered and run in at least one race. This excludes horses that were bred but never made it to the track due to injury, lack of ability, or other reasons.</p>
@@ -387,10 +395,12 @@
       <p id="glossary-grade2"><strong>Grade 2 (G2):</strong> High-quality stakes races one tier below Grade 1. These races attract top horses but typically offer smaller purses and less prestige than G1 events. Horses often use G2 races as prep races for Grade 1 targets.</p>
       <p id="glossary-grade3"><strong>Grade 3 (G3):</strong> The entry level of graded stakes racing. While less prestigious than G1 or G2, winning a Grade 3 still marks a horse as above-average and earns "graded black type" in sales catalogs — a sign of quality that increases breeding value.</p>
   </section>
+  
 </main>
-
-<footer>
-    <p>Analysis based on 13,902 horses across 215 female families</p>
+<footer class="site-footer">
+  <p>&copy; 2024 The Tail Tells the Tale. All rights reserved.</p>
+  <p>Data sourced from Equibase® and Pedigree Query.</p>
+  <p>Exploratory analysis · Substantive corrections or data contributions welcome via direct correspondence via <a href="https://github.com/jackrataty">GitHub</a>.</p>
 </footer>
 
 <script src="script.js"></script>
