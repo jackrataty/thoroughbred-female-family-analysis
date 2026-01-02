@@ -253,7 +253,7 @@
         }
 
         thead {
-            background: var(--text);
+            background: var(--rich);
             color: #fff;
         }
 
