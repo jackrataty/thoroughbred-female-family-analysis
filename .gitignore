@@ -1,3 +1,7 @@
 *Zone.Identifier*
 __pycache__/
 crop_2021/db_connect.py
+
+__pycache__/
+*.pyc
+crop_2022/
